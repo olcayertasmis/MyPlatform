@@ -149,7 +149,10 @@ public class GameManager : MonoBehaviour
     private IEnumerator IENextLevel()
     {
         var activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        var nextLevelIndex = activeSceneIndex + 1;
+        int nextLevelIndex;
+
+        if (activeSceneIndex == SceneManager.sceneCount) nextLevelIndex = 0;
+        else nextLevelIndex = activeSceneIndex + 1;
 
         if (lastLevelIndex < nextLevelIndex)
         {
