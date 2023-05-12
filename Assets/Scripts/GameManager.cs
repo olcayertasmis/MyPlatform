@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
         var activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextLevelIndex;
 
-        if (activeSceneIndex == SceneManager.sceneCount) nextLevelIndex = 0;
+        if (activeSceneIndex + 1 == SceneManager.sceneCountInBuildSettings) nextLevelIndex = 0;
         else nextLevelIndex = activeSceneIndex + 1;
 
         if (lastLevelIndex < nextLevelIndex)
